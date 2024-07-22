@@ -1,0 +1,21 @@
+{
+    "manifest_version": 3,
+    "name": "wezzi recorder",
+    "version": "1.0.0",
+    "minimum_chrome_version": "116",
+    "description": "A basic example extension with only required keys",
+    "action": {
+        "default_icon": "images/icon-128.png"
+    },
+    "background": {
+      "service_worker": "service-worker.js"
+    },
+    "permissions": ["tabCapture", "offscreen", "scripting", "tabs", "desktopCapture"],
+    "host_permissions": ["<all_urls>"],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./contentScript.js"]
+        }
+    ]
+  }
